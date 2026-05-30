@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- LOGO_PLACEHOLDER: Replace this with actual logo SVG -->
+  <!-- Dark red 'A' mark, text "AXIOM SHIFT" -->
+  <g fill="#8B0000">
+    <!-- Arrow/Shift mark -->
+    <path d="M10 50 L30 10 L50 50 L40 50 L32 35 L20 35 L12 50 Z"/>
+    <path d="M15 42 L35 42 L25 18 Z" fill="#5C0000"/>
+  </g>
+  <!-- Text -->
+  <text x="60" y="40" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">AXIOM SHIFT</text>
+</svg>
