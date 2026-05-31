@@ -180,12 +180,12 @@ nav {
 .hero::before {
   content: '';
   position: absolute;
-  right: -10%;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
-  width: 900px;
-  height: 900px;
-  background: url('../images/logo.png') center top / auto 70% no-repeat;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: url('../images/logo.png') center/contain no-repeat;
   opacity: 0.20;
   pointer-events: none;
 }
