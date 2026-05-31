@@ -183,9 +183,9 @@ nav {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  background: url('../images/logo.png') center/contain no-repeat;
+  width: 700px;
+  height: 700px;
+  background: url('../images/logo-triangle.jpg') center/contain no-repeat;
   opacity: 0.20;
   pointer-events: none;
 }
