@@ -180,17 +180,22 @@ nav {
 .hero::before {
   content: '';
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: min(90vw, 900px);
+  height: min(90vw, 900px);
   background: url('../images/logo-triangle.jpg') center/contain no-repeat;
-  opacity: 0.20;
+  opacity: 0.22;
+  z-index: 1;
   pointer-events: none;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 700px;
 }
 
