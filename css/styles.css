@@ -180,15 +180,13 @@ nav {
 .hero::before {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: min(90vw, 900px);
-  height: min(90vw, 900px);
-  background: url('../images/logo-triangle.jpg') center/contain no-repeat;
-  opacity: 0.22;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: min(85vw, 680px);
+  height: min(85vw, 680px);
+  background: url('../images/logo-triangle-blend.png') center/contain no-repeat;
+  opacity: 0.12;
   z-index: 1;
   pointer-events: none;
 }
