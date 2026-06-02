@@ -32,34 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Contact form handling
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      
-      // Basic validation
-      if (!data.name || !data.email || !data.message) {
-        alert('Please fill in all required fields.');
-        return;
-      }
-      
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(data.email)) {
-        alert('Please enter a valid email address.');
-        return;
-      }
-      
-      // Show success message (in production, this would send to a backend)
-      alert('Thank you for your message! We\'ll be in touch within 24 hours.');
-      this.reset();
-    });
-  }
+
   
   // Intersection Observer for fade-in animations
   const observerOptions = {
