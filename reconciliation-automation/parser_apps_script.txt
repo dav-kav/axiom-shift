@@ -1,0 +1,425 @@
+/**
+ * Wander Hotel - Bank Reconciliation Parser
+ * Google Apps Script - ES5 compatible version
+ * 
+ * Install:
+ * 1. Open the sheet > Extensions > Apps Script
+ * 2. Replace Code.gs with this entire file
+ * 3. Save (Ctrl+S) > Refresh sheet
+ * 4. Click "Parser" menu > Run on Import Tab
+ */
+
+// ============================================================
+// CATEGORY MAP
+// ============================================================
+var CATEGORY_MAP = {
+  rules: [
+    { id: "card_sales", patterns: ["VISANET AF:", "NEONET AF:", "ACEPTA AF:"], match_on: "descripcion_startswith", description: "Restaurant/Bar Sales" },
+    { id: "cash_deposit", patterns: ["DEPOSITO EN EFECTIVO"], match_on: "descripcion_contains", description: "Cash Deposit" },
+    { id: "transfer_between_accounts", patterns: ["TRANSFERENCIA DE FONDOS BC"], match_on: "descripcion_contains", description: "Transfer between accounts" },
+    { id: "ach_debit", patterns: ["DEBITO ACH"], match_on: "descripcion_startswith", description: null },
+    { id: "electric_bill", patterns: ["Pago de Empresa Electrica"], match_on: "descripcion_contains", description: "Electric Bill" },
+    { id: "taxes", patterns: ["DECLARAGUATE TESORERIA NAC."], match_on: "descripcion_contains", description: "Taxes" },
+    { id: "accounting_fee", patterns: ["Accounting Fee", "Accounting services"], match_on: "notels_contains", description: "Accounting Services" },
+    { id: "owner_cash_infustion", patterns: ["Owner cash infusion", "Owner deposit", "cash infustion", "cash infusion"], match_on: "notels_contains", description: "Owner Cash Infusion" },
+    { id: "reimbursement", patterns: ["Reimbursement", "reimburesement"], match_on: "notels_contains", description: "Reimbursement" },
+    { id: "excludes", patterns: ["Exclude"], match_on: "notels_equals", description: "__EXCLUDE__" },
+    { id: "returned_check_fee", patterns: ["ND x Rechazos"], match_on: "descripcion_contains", description: "Fee for returned check" }
+  ],
+  ach_subtypes: {
+    payroll_keywords: ["Payroll", "salary", "Salary", "Payr"],
+    tip_keywords: ["Tip"],
+    aguinaldo_keywords: ["Aguinaldo"],
+    liquidacion_keywords: ["Liquidacion"],
+    inventory_keywords: ["Inventory", "Pricemart", "Bread", "COGS", "Food", "Bar"],
+    trash_keywords: ["Trash", "Service"],
+    rent_keywords: ["Rent", "Ops mgr"],
+    vendor_specific: {
+      "Compensacion Guate ACH": {
+        Sergi: "Sergio Payroll",
+        Melvin: "Melvin Payroll",
+        Melving: "Melvin Payroll",
+        Lesli: "Lesli Payroll",
+        Eslin: "Eslin Payroll",
+        Evelin: "Evelin Payroll",
+        Ana: "Ana Payroll",
+        Edgar: "Edgar Payroll",
+        Pablo: "Pablo Payroll",
+        Marisol: "Marisol Payroll",
+        Jefferson: "Jefferson Payroll",
+        Ani: "Ani Payroll",
+        Juli: "Juli Payroll",
+        Pricemart: "Inventory - Food",
+        Bread: "Inventory - Bread",
+        COGS: "COGS",
+        Pool: "Pool Supplies",
+        "Gabriel Muniz": "Furniture Repair",
+        Saran: "Outdoor Supplies",
+        Tuk: "Transportation",
+        "Jimmy Javier": "Supplies",
+        "Jaquelin Carol": "Supplies",
+        "Onsite Music": "Entertainment",
+        Septic: "Septic Service",
+        "La Torre": "Reimbursement",
+        Byron: "Electrical Work",
+        Airport: "Airport Transfer",
+        ConstructionAutosu: "Construction",
+        Polos: "Staff Uniforms",
+        "Jose Letran": "Contractor Deposit",
+        "Wander cups": "Wander Branding",
+        AC: "AC Maintenance",
+        Petty: "Petty Cash"
+      }
+    }
+  },
+  vendor_to_notels: {
+    "VISANET AF:": "Restaurant/Bar Sales",
+    "NEONET AF:": "Restaurant/Bar Sales",
+    "ACEPTA AF:": "Restaurant/Bar Sales",
+    PROVENET: "Restaurant/Bar Sales",
+    "CREDITO ACH": "Restaurant/Bar Sales",
+    "Crédito Pago Diario": "Restaurant/Bar Sales"
+  }
+};
+
+// ============================================================
+// PARSER
+// ============================================================
+function BankCSVParser() {
+  this.rules = CATEGORY_MAP.rules;
+  this.achConfig = CATEGORY_MAP.ach_subtypes;
+  this.vendorMap = CATEGORY_MAP.vendor_to_notels;
+  this.excludes = 0;
+  this.classified = 0;
+  this.unclassified = 0;
+  this.unclassifiedRows = [];
+}
+
+BankCSVParser.prototype.parseAmount = function(value) {
+  if (!value || value.toString().trim() === '') return null;
+  var cleaned = value.toString().trim().replace(/"/g, '').replace(/,/g, '').trim();
+  if (cleaned === '') return null;
+  var n = parseFloat(cleaned);
+  return isNaN(n) ? null : n;
+};
+
+BankCSVParser.prototype.parseDate = function(dateStr) {
+  try {
+    if (!dateStr) return null;
+    var parts = dateStr.toString().trim().split('/');
+    if (parts.length !== 3) return null;
+    var day = parts[0].padStart(2, '0');
+    var month = parts[1].padStart(2, '0');
+    var year = parts[2];
+    if (year.length === 2) year = '20' + year;
+    return year + '-' + month + '-' + day;
+  } catch (e) {
+    return null;
+  }
+};
+
+BankCSVParser.prototype.getNetAmount = function(debito, credito) {
+  var debit = this.parseAmount(debito) || 0;
+  var credit = this.parseAmount(credito) || 0;
+  var net = credit + debit;
+  return net !== 0 ? net : null;
+};
+
+BankCSVParser.prototype.matchRule = function(descripcion, agencia, notels) {
+  var descripcionUpper = descripcion.toUpperCase();
+  var notelsUpper = notels ? notels.toUpperCase() : '';
+
+  // Exclude check
+  for (var r = 0; r < this.rules.length; r++) {
+    var rule = this.rules[r];
+    if (rule.id === 'excludes') {
+      for (var p = 0; p < rule.patterns.length; p++) {
+        if (notelsUpper === rule.patterns[p].toUpperCase()) {
+          return { result: 'exclude', description: notels.trim(), rule_id: 'excludes' };
+        }
+      }
+    }
+  }
+
+  // Vendor exact match
+  for (var vk in this.vendorMap) {
+    if (this.vendorMap.hasOwnProperty(vk)) {
+      if (descripcionUpper.indexOf(vk.toUpperCase()) === 0) {
+        return { result: 'classified', description: this.vendorMap[vk], rule_id: 'vendor_exact' };
+      }
+    }
+  }
+
+  // Standard rules
+  for (var r2 = 0; r2 < this.rules.length; r2++) {
+    var rule2 = this.rules[r2];
+    if (rule2.id === 'excludes' || rule2.id === 'ach_debit') continue;
+    if (rule2.description === null) continue;
+
+    for (var p2 = 0; p2 < rule2.patterns.length; p2++) {
+      var pat = rule2.patterns[p2].toUpperCase();
+      var matched = false;
+
+      if (rule2.match_on === 'descripcion_startswith' && descripcionUpper.indexOf(pat) === 0) {
+        matched = true;
+      } else if (rule2.match_on === 'descripcion_contains' && descripcionUpper.indexOf(pat) > -1) {
+        matched = true;
+      } else if (rule2.match_on === 'notels_contains' && notelsUpper.indexOf(pat) > -1) {
+        matched = true;
+      } else if (rule2.match_on === 'notels_equals' && notelsUpper === pat) {
+        matched = true;
+      }
+
+      if (matched) {
+        return { result: 'classified', description: rule2.description, rule_id: rule2.id };
+      }
+    }
+  }
+
+  // ACH sub-type
+  if (descripcionUpper.indexOf('DEBITO ACH') === 0 || descripcionUpper.indexOf('ACH') > -1) {
+    var achResult = this.classifyAch(descripcion, agencia, notels);
+    if (achResult) return achResult;
+  }
+
+  return { result: 'unclassified', description: (notels ? notels.trim() : descripcion.trim()), rule_id: null };
+};
+
+BankCSVParser.prototype.classifyAch = function(descripcion, agencia, notels) {
+  if (!notels) return null;
+  var dUp = descripcion.toUpperCase();
+  var nUp = notels.toUpperCase();
+  var aUp = agencia ? agencia.toUpperCase() : '';
+  var vs = this.achConfig.vendor_specific;
+
+  // Keyword checks
+  var kwChecks = [
+    { key: 'payroll_keywords', res: 'ach_payroll' },
+    { key: 'tip_keywords', res: 'ach_tip' },
+    { key: 'aguinaldo_keywords', res: 'ach_aguinaldo' },
+    { key: 'liquidacion_keywords', res: 'ach_liquidacion' },
+    { key: 'inventory_keywords', res: 'ach_inventory' },
+    { key: 'trash_keywords', res: 'ach_trash' },
+    { key: 'rent_keywords', res: 'ach_rent' }
+  ];
+
+  for (var k = 0; k < kwChecks.length; k++) {
+    var kc = kwChecks[k];
+    var kws = this.achConfig[kc.key];
+    for (var kw = 0; kw < kws.length; kw++) {
+      if (nUp.indexOf(kws[kw].toUpperCase()) > -1) {
+        return { result: 'classified', description: notels.trim(), rule_id: kc.res };
+      }
+    }
+  }
+
+  // Vendor specific by agency
+  if (vs[aUp]) {
+    for (var vk2 in vs[aUp]) {
+      if (vs[aUp].hasOwnProperty(vk2)) {
+        if (nUp.indexOf(vk2.toUpperCase()) > -1 || dUp.indexOf(vk2.toUpperCase()) > -1) {
+          return { result: 'classified', description: notels.trim(), rule_id: 'ach_vendor_specific' };
+        }
+      }
+    }
+  }
+
+  // Global vendor specific search
+  for (var vk3 in vs) {
+    if (!vs.hasOwnProperty(vk3)) continue;
+    var config = vs[vk3];
+    if (typeof config !== 'object' || Array.isArray(config)) continue;
+    for (var k2 in config) {
+      if (!config.hasOwnProperty(k2)) continue;
+      if (nUp.indexOf(k2.toUpperCase()) > -1) {
+        return { result: 'classified', description: notels.trim(), rule_id: 'ach_vendor_specific' };
+      }
+    }
+  }
+
+  return null;
+};
+
+BankCSVParser.prototype.parseRow = function(row) {
+  var descripcion = row.Descripcion || row.Descripcion || '';
+  var agencia = row.Agencia || '';
+  var notels = row.Notels || '';
+  var debito = row.Debito || '';
+  var credito = row.Credito || '';
+  var fecha = row.Fecha || '';
+
+  var parsedDate = this.parseDate(fecha);
+  if (!parsedDate) return null;
+
+  var amount = this.getNetAmount(debito, credito);
+  if (amount === null) return null;
+
+  var match = this.matchRule(descripcion, agencia, notels);
+
+  if (match.result === 'exclude') {
+    this.excludes++;
+    return null;
+  }
+
+  if (match.result === 'unclassified') {
+    this.unclassified++;
+    this.unclassifiedRows.push({
+      date: parsedDate,
+      description: match.description,
+      amount: amount,
+      raw_descripcion: descripcion,
+      agencia: agencia,
+      referencia: row.Referencia || ''
+    });
+  } else {
+    this.classified++;
+  }
+
+  return {
+    date: parsedDate,
+    description: match.description,
+    amount: amount,
+    raw_descripcion: descripcion,
+    agencia: agencia,
+    referencia: row.Referencia || '',
+    rule_id: match.rule_id
+  };
+};
+
+BankCSVParser.prototype.getSummary = function() {
+  var total = this.excludes + this.classified + this.unclassified;
+  var rate = total > 0 ? (this.classified / total * 100).toFixed(1) + '%' : 'N/A';
+  return '\nExcluded: ' + this.excludes + ' | Classified: ' + this.classified + ' | Unclassified: ' + this.unclassified + ' | Total: ' + total + ' | Rate: ' + rate;
+};
+
+// ============================================================
+// GOOGLE SHEETS INTEGRATION
+// ============================================================
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('\uD83D\uDD04 Parser')
+    .addItem('\u25B6 Run on Import Tab', 'runParser')
+    .addItem('\uD83D\uDDD1 Clear QB Upload', 'clearQBUpload')
+    .addSeparator()
+    .addItem('\uD83D\uDCE5 Download QB Upload as CSV', 'downloadQBUploadCSV')
+    .addToUi();
+}
+
+function runParser() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var importSheet = ss.getSheetByName('Import');
+  var qbSheet = ss.getSheetByName('QB Upload');
+  var unclSheet = ss.getSheetByName('Unclassified Log');
+
+  if (!importSheet || !qbSheet || !unclSheet) {
+    SpreadsheetApp.getUi().alert('Error: Required tabs not found. Make sure the sheet has Import, QB Upload, and Unclassified Log tabs.');
+    return;
+  }
+
+  var lastRow = importSheet.getLastRow();
+  if (lastRow < 3) {
+    SpreadsheetApp.getUi().alert('No data in Import tab. Paste BAC CSV starting at row 3, then run again.');
+    return;
+  }
+
+  // Read data starting at row 3 (row 1=instructions, row 2=headers)
+  var allData = importSheet.getRange(3, 1, lastRow - 2, 9).getValues();
+
+  var parser = new BankCSVParser();
+  var results = [];
+
+  for (var i = 1; i < allData.length; i++) {
+    var row = {
+      Month: allData[i][0],
+      Fecha: allData[i][1],
+      Referencia: allData[i][2],
+      Descripcion: allData[i][3],    // Handle both accented and non-accented
+      Descripcion: allData[i][3],
+      Debito: allData[i][4],
+      Credito: allData[i][5],
+      Saldo: allData[i][6],
+      Agencia: allData[i][7],
+      Notels: allData[i][8]
+    };
+    var parsed = parser.parseRow(row);
+    if (parsed) results.push(parsed);
+  }
+
+  // Write QB Upload
+  if (results.length > 0) {
+    var qbData = [];
+    for (var j = 0; j < results.length; j++) {
+      var r = results[j];
+      qbData.push([
+        r.date,
+        r.description,
+        r.amount.toFixed(2),
+        r.rule_id || 'UNCLASSIFIED',
+        r.raw_descripcion,
+        ''
+      ]);
+    }
+    qbSheet.getRange(2, 1, qbData.length, 6).setValues(qbData);
+    qbSheet.getRange(2, 3, qbData.length, 1).setNumberFormat('#,##0.00');
+    qbSheet.getRange(2, 1, qbData.length, 1).setNumberFormat('YYYY-MM-DD');
+  }
+
+  // Write Unclassified Log
+  if (parser.unclassifiedRows.length > 0) {
+    var unclData = [];
+    for (var k = 0; k < parser.unclassifiedRows.length; k++) {
+      var ur = parser.unclassifiedRows[k];
+      unclData.push([
+        ur.date,
+        ur.raw_descripcion,
+        ur.amount.toFixed(2),
+        ur.agencia,
+        '',
+        'NEEDS REVIEW'
+      ]);
+    }
+    unclSheet.getRange(2, 1, unclData.length, 6).setValues(unclData);
+    unclSheet.getRange(2, 3, unclData.length, 1).setNumberFormat('#,##0.00');
+    unclSheet.getRange(2, 1, unclData.length, 1).setNumberFormat('YYYY-MM-DD');
+  }
+
+  var msg = 'Done!' + parser.getSummary() + '\n\nQB Upload: ' + results.length + ' rows\nUnclassified: ' + parser.unclassifiedRows.length + ' rows\n\nQB Upload tab is ready. Select data and drag into QuickBooks.';
+  SpreadsheetApp.getUi().alert(msg);
+}
+
+function clearQBUpload() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var qbSheet = ss.getSheetByName('QB Upload');
+  var unclSheet = ss.getSheetByName('Unclassified Log');
+  if (qbSheet) qbSheet.getRange(2, 1, Math.max(1, qbSheet.getLastRow() - 1), 6).clearContent();
+  if (unclSheet) unclSheet.getRange(2, 1, Math.max(1, unclSheet.getLastRow() - 1), 6).clearContent();
+  SpreadsheetApp.getUi().alert('QB Upload and Unclassified Log cleared.');
+}
+
+function downloadQBUploadCSV() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var qbSheet = ss.getSheetByName('QB Upload');
+  if (!qbSheet) {
+    SpreadsheetApp.getUi().alert('QB Upload tab not found.');
+    return;
+  }
+  var lastRow = qbSheet.getLastRow();
+  if (lastRow < 2) {
+    SpreadsheetApp.getUi().alert('No data in QB Upload yet. Run parser first.');
+    return;
+  }
+
+  var data = qbSheet.getRange(1, 1, lastRow, 3).getValues();
+  var csv = 'Date,Description,Amount\n';
+  for (var i = 1; i < data.length; i++) {
+    var desc = data[i][1] ? data[i][1].toString().replace(/"/g, '""') : '';
+    if (desc.indexOf(',') > -1 || desc.indexOf('\n') > -1) {
+      desc = '"' + desc + '"';
+    }
+    csv += data[i][0] + ',' + desc + ',' + data[i][2] + '\n';
+  }
+
+  var blob = Utilities.newBlob(csv, 'text/csv', 'qb_upload.csv');
+  DriveApp.createFile(blob);
+  SpreadsheetApp.getUi().alert("CSV saved to your Drive root as 'qb_upload.csv'.");
+}

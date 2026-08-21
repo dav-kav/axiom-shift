@@ -1,0 +1,203 @@
+{
+  "description": "Category mapping for Wander Boutique Hotel bank reconciliation. Bank Description patterns → QB Notels (description) field.",
+  "version": "1.0",
+  "source_data": "BAC Guatemala CSV export (Jan-Apr 2024 sample)",
+
+  "rules": [
+    {
+      "id": "card_sales",
+      "patterns": ["VISANET AF:", "NEONET AF:", "ACEPTA AF:"],
+      "match_on": "descripcion_startswith",
+      "description": "Restaurant/Bar Sales",
+      "notes": "Card terminal transactions (Visa/Mastercard) - always revenue"
+    },
+    {
+      "id": "cash_deposit",
+      "patterns": ["DEPOSITO EN EFECTIVO"],
+      "match_on": "descripcion_contains",
+      "description": "Cash Deposit",
+      "notes": "Cash over-the-counter deposits"
+    },
+    {
+      "id": "transfer_between_accounts",
+      "patterns": ["TRANSFERENCIA DE FONDOS BC"],
+      "match_on": "descripcion_contains",
+      "description": "Transfer between accounts",
+      "notes": "Internal transfers - map to specific accounts as needed"
+    },
+    {
+      "id": "ach_debit",
+      "patterns": ["DEBITO ACH"],
+      "match_on": "descripcion_startswith",
+      "description": null,
+      "notes": "ACH debits - classify sub-type by agency + description content"
+    },
+    {
+      "id": "electric_bill",
+      "patterns": ["Pago de Empresa Electrica"],
+      "match_on": "descripcion_contains",
+      "description": "Electric Bill",
+      "notes": "EEGSA or similar utility"
+    },
+    {
+      "id": "taxes",
+      "patterns": ["DECLARAGUATE TESORERIA NAC."],
+      "match_on": "descripcion_contains",
+      "description": "Taxes",
+      "notes": "SAT tax payments via Declaragua"
+    },
+    {
+      "id": "accounting_fee",
+      "patterns": ["Accounting Fee", "Accounting services"],
+      "match_on": "notels_contains",
+      "description": "Accounting Services",
+      "notes": "Accountant fees"
+    },
+    {
+      "id": "owner_cash_infustion",
+      "patterns": ["Owner cash infusion", "Owner deposit", "cash infustion", "cash infusion"],
+      "match_on": "notels_contains",
+      "description": "Owner Cash Infusion",
+      "notes": "Owner's own money put into business"
+    },
+    {
+      "id": "reimbursement",
+      "patterns": ["Reimbursement", "reimburesement"],
+      "match_on": "notels_contains",
+      "description": "Reimbursement",
+      "notes": "Expense reimbursements"
+    },
+    {
+      "id": "excludes",
+      "patterns": ["Exclude"],
+      "match_on": "notels_equals",
+      "description": "__EXCLUDE__",
+      "notes": "Rows to skip entirely"
+    },
+    {
+      "id": "returned_check_fee",
+      "patterns": ["ND x Rechazos"],
+      "match_on": "descripcion_contains",
+      "description": "Fee for returned check",
+      "notes": "Bank fee for returned item"
+    }
+  ],
+
+  "ach_subtypes": {
+    "payroll_keywords": ["Payroll", "salary", "Salary", "Payr"],
+    "tip_keywords": ["Tip"],
+    "aguinaldo_keywords": ["Aguinaldo"],
+    "liquidacion_keywords": ["Liquidacion"],
+    "inventory_keywords": ["Inventory", "Pricemart", "Bread", "COGS", "Food", "Bar"],
+    "trash_keywords": ["Trash", "Service"],
+    "rent_keywords": ["Rent", "Ops mgr"],
+    "vendor_specific": {
+      "Compensacion Guate ACH": {
+        "Sergi": "Sergio Payroll",
+        "Melvin": "Melvin Payroll",
+        "Melving": "Melvin Payroll",
+        "Lesli": "Lesli Payroll",
+        "Eslin": "Eslin Payroll",
+        "Evelin": "Evelin Payroll",
+        "Ana": "Ana Payroll",
+        "Edgar": "Edgar Payroll",
+        "Pablo": "Pablo Payroll",
+        "Marisol": "Marisol Payroll",
+        "Jefferson": "Jefferson Payroll",
+        "Ani": "Ani Payroll",
+        "Juli": "Juli Payroll"
+      },
+      "Pricemart": {
+        "description": "Inventory - Food",
+        "keywords": ["Pricemart"]
+      },
+      "Bread": {
+        "description": "Inventory - Bread",
+        "keywords": ["Bread"]
+      },
+      "COGS": {
+        "description": "COGS",
+        "keywords": ["COGS"]
+      },
+      "Pool": {
+        "description": "Pool Supplies",
+        "keywords": ["Pool"]
+      },
+      "Gabriel Muniz": {
+        "description": "Furniture Repair",
+        "keywords": ["Gabriel Muniz"]
+      },
+      "Saran": {
+        "description": "Outdoor Supplies",
+        "keywords": ["Saran"]
+      },
+      "Tuk": {
+        "description": "Transportation",
+        "keywords": ["Tuk"]
+      },
+      "Jimmy Javier": {
+        "description": "Supplies",
+        "keywords": ["Jimmy Javier"]
+      },
+      "Jaquelin Carol": {
+        "description": "Supplies",
+        "keywords": ["Jaquelin Carol"]
+      },
+      "Onsite Music": {
+        "description": "Entertainment",
+        "keywords": ["Onsite Music"]
+      },
+      "Septic": {
+        "description": "Septic Service",
+        "keywords": ["Septic"]
+      },
+      "La Torre": {
+        "description": "Reimbursement",
+        "keywords": ["La Torre"]
+      },
+      "Byron": {
+        "description": "Electrical Work",
+        "keywords": ["Byron"]
+      },
+      "Airport": {
+        "description": "Airport Transfer",
+        "keywords": ["airport", "DFA"]
+      },
+      "ConstructionAutosu": {
+        "description": "Construction",
+        "keywords": ["erroneously deposited"]
+      },
+      "Polos": {
+        "description": "Staff Uniforms",
+        "keywords": ["Polos"]
+      },
+      "Jose Letran": {
+        "description": "Contractor Deposit",
+        "keywords": ["Jose Letran"]
+      },
+      "Wander cups": {
+        "description": "Wander Branding",
+        "keywords": ["Wander cups", "Wander tshirts"]
+      },
+      "AC": {
+        "description": "AC Maintenance",
+        "keywords": ["AC maintanence"]
+      },
+      "Petty": {
+        "description": "Petty Cash",
+        "keywords": ["Petty cash"]
+      }
+    }
+  },
+
+  "vendor_to_notels": {
+    "VISANET AF:": "Restaurant/Bar Sales",
+    "NEONET AF:": "Restaurant/Bar Sales",
+    "ACEPTA AF:": "Restaurant/Bar Sales",
+    "PROVENET": "Restaurant/Bar Sales",
+    "CREDITO ACH": "Restaurant/Bar Sales",
+    "Crédito Pago Diario": "Restaurant/Bar Sales"
+  },
+
+  "qbd_import_columns": ["Date", "Description", "Amount"]
+}

@@ -1,0 +1,363 @@
+Date,Description,Amount,Rule Applied,Raw Descripcion,Agencia
+2024-01-01,Restaurant/Bar Sales,3935.47,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-01,Transfer between accounts,-2308.73,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-01-02,Inventory - Bar,-2472.13,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Melvin Payroll,-4511.23,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Lesli Payroll,-2388.74,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Evelin Payroll,-2290.51,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Ani Payroll,-2094.72,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Sergio Payroll,-1626.75,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Eslin Payroll,-2621.57,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Melvin Aguinaldo,-1761.52,ach_aguinaldo,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Lesli Aguinaldo,-1144.29,ach_aguinaldo,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Evelin Aguinaldo,-1376.49,ach_aguinaldo,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Ani Aguinaldo,-1302.79,ach_aguinaldo,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Eslin Aguinaldo,-1376.52,ach_aguinaldo,DEBITO ACH,Compensacion Guate ACH
+2024-01-02,Restaurant/Bar Sales,4051.31,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-02,Restaurant/Bar Sales,314.08,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-02,Transfer between accounts,-1509.88,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-01-02,AC Maintenance,-1509.88,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-03,Restaurant/Bar Sales,532.76,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-03,Restaurant/Bar Sales,811.06,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-03,Pool Supplies,-1431.50,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-03,Taxes,-18.85,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-01-04,Inventory - Bread,-565.56,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-01-05,Restaurant/Bar Sales,123.25,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-05,Restaurant/Bar Sales,365.78,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-05,Transfer between accounts,-4901.52,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-01-06,Restaurant/Bar Sales,652.03,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-06,Restaurant/Bar Sales,1727.88,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-06,Restaurant/Bar Sales,845.64,vendor_exact,CREDITO ACH MALDONADOBAYONAMAR,Compensacion Guate ACH
+2024-01-07,Restaurant/Bar Sales,169.68,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-07,Restaurant/Bar Sales,234.33,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-08,Restaurant/Bar Sales,68.68,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-08,Restaurant/Bar Sales,487.85,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-09,Cash Deposit,18053.32,cash_deposit,DEPOSITO EN EFECTIVO,MARISCAL
+2024-01-09,Fee for returned check,-37.70,returned_check_fee,ND x Rechazos de Compe 0000006,Oper. Autom.
+2024-01-09,Ops mgr Rent payment,-3142.00,ach_rent,DEBITO ACH,Compensacion Guate ACH
+2024-01-09,AC Maintenance,-30980.12,ach_vendor,DEBITO RECEPTOR ACH,Compensacion Guate ACH
+2024-01-10,Restaurant/Bar Sales,294.92,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-10,Transfer between accounts,-1633.84,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-01-11,Trash Removal,-980.30,ach_trash,DEBITO ACH,Compensacion Guate ACH
+2024-01-11,Restaurant/Bar Sales,181.81,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-01-14,Restaurant/Bar Sales,246.46,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-14,Restaurant/Bar Sales,2093.40,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-14,Restaurant/Bar Sales,263.26,vendor_exact,CREDITO ACH SOTOCASTILLOVERAMA,Compensacion Guate ACH
+2024-01-15,Inventory - Bread,-722.66,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-01-15,Restaurant/Bar Sales,1172.29,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-15,Restaurant/Bar Sales,412.30,vendor_exact,ACEPTA AF:143030000,Bca. Empresa
+2024-01-15,Cash Deposit,10839.31,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-01-16,Taxes,-1733.29,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-01-16,Transfer between accounts,-1440.37,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-01-17,AC Maintenance,-1997.63,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,AC Maintenance,-1919.07,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,AC Maintenance,-2050.09,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,AC Maintenance,-2128.28,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,AC Maintenance,-1346.10,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,AC Maintenance,-2437.50,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-01-17,Restaurant/Bar Sales,60.60,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-01-18,Restaurant/Bar Sales,367.66,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-19,Restaurant/Bar Sales,517.61,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-21,Restaurant/Bar Sales,3860.36,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-22,Restaurant/Bar Sales,464.62,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-22,Restaurant/Bar Sales,60.60,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-01-23,Restaurant/Bar Sales,671.52,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-26,Restaurant/Bar Sales,137.37,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-01-28,Cash Deposit,4394.32,cash_deposit,DEPOSITO EN EFECTIVO,Cayala II
+2024-01-29,Inventory - Breat,-595.72,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-01-29,Inventory - Bar,-578.13,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-01-29,Restaurant/Bar Sales,3022.94,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-02-01,Ana Payroll,-258.44,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Transfer between accounts,-2434.12,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-02-01,Melvin Payroll,-4511.23,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Lesli Payroll,-1877.19,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Eslin Payroll,-2750.10,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Evelin Payroll,-2337.96,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Ani Payroll,-2092.19,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-01,Sergio Payroll,-1418.37,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-02,Cash Deposit,3442.21,cash_deposit,DEPOSITO EN EFECTIVO,Agentes GyT
+2024-02-03,Restaurant/Bar Sales,145.44,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-02-04,Restaurant/Bar Sales,609.07,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-02-05,Restaurant/Bar Sales,2041.46,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-02-05,Ani Liquidacion,-4006.89,ach_liquidacion,DEBITO ACH,Compensacion Guate ACH
+2024-02-06,Restaurant/Bar Sales,383.81,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-02-07,Restaurant/Bar Sales,137.37,vendor_exact,VISANET AF:143030000,Bca. Empresa
+2024-02-07,Evelin Tip,-1106.41,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-02-07,Melvin Tip,-1691.16,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-02-07,Lesli Tip,-565.67,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-02-07,Transfer between accounts,-1106.41,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-02-08,Eslin Tip,-131.89,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-02-09,Restaurant/Bar Sales,1100.12,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-10,Restaurant/Bar Sales,1351.27,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-11,Restaurant/Bar Sales,2082.55,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-11,Restaurant/Bar Sales,269.92,vendor_exact,CREDITO ACH CABALLEROSGONZALEZ,Compensacion Guate ACH
+2024-02-12,Restaurant/Bar Sales,380.20,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-12,Transfer between accounts,-2513.60,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-02-12,Taxes,-1747.03,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-02-12,Inventory - Bread,-720.15,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-02-12,Inventory - Bread,-1068.28,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-02-13,Restaurant/Bar Sales,141.41,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-14,Restaurant/Bar Sales,1514.14,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-15,Cash Deposit,2856.31,cash_deposit,DEPOSITO EN EFECTIVO,Agentes GyT
+2024-02-16,Restaurant/Bar Sales,121.20,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-16,Lesli Payroll,-2525.21,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Evelin Payroll,-2407.31,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Sergio Payroll,-1132.49,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Eslin Payroll,-2638.80,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Ana Payroll,-1760.78,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Edgar Payroll,-1299.83,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Melving Payroll,-2091.04,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Pablo Payroll,-1989.93,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Airport Transfer,-942.60,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-02-16,Transfer between accounts,-1243.94,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-02-17,Restaurant/Bar Sales,1506.02,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-17,Electric Bill,-10911.51,electric_bill,Pago de Empresa Electrica,Cob.Cta.Ajena
+2024-02-18,Restaurant/Bar Sales,369.29,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-19,Restaurant/Bar Sales,1846.41,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-19,Inventory - Bar,-1728.10,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-02-20,Restaurant/Bar Sales,848.41,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-20,Restaurant/Bar Sales,5456.28,vendor_exact,CREDITO ACH CONSTRUCCIONAUTOSU,Compensacion Guate ACH
+2024-02-21,Septic Service,-1759.52,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-02-21,Restaurant/Bar Sales,416.13,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-21,Electrical Work,-9363.16,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-02-25,Restaurant/Bar Sales,932.05,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-25,Restaurant/Bar Sales,270.98,vendor_exact,CREDITO ACH SALINASOROZCO,Compensacion Guate ACH
+2024-02-26,Restaurant/Bar Sales,1245.44,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-27,Restaurant/Bar Sales,660.51,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-02-28,Restaurant/Bar Sales,1867.98,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-01,Restaurant/Bar Sales,642.38,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-01,Evelin Payroll,-2078.21,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Eslin Payroll,-2134.00,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Ana Payroll,-2102.30,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Pablo Payroll,-3456.20,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Edgar Payroll,-2123.85,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Sergio Payroll,-1722.75,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-01,Transfer between accounts,-1897.52,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-03-01,Taxes,-840.90,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-03-01,Transfer between accounts,1111.76,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-03-02,Restaurant/Bar Sales,407.54,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-03,Restaurant/Bar Sales,2734.77,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-04,Restaurant/Bar Sales,5647.93,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-04,Melvin Payr,-4604.64,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-04,Reimbursement,-493.06,reimbursement,DEBITO ACH,Compensacion Guate ACH
+2024-03-04,Lesli Liquidacion,-2597.81,ach_liquidacion,DEBITO ACH,Compensacion Guate ACH
+2024-03-04,Ops Mgr Rent,-1060.74,ach_rent,DEBITO ACH,Compensacion Guate ACH
+2024-03-04,Pricemart Food and Supplies,-3895.43,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-05,Restaurant/Bar Sales,161.60,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-05,Transfer between accounts,-402.18,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-03-06,Restaurant/Bar Sales,3190.13,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-06,Cash Deposit,2416.87,cash_deposit,DEPOSITO EN EFECTIVO,CHIQUIMULILLA
+2024-03-07,Transfer between accounts,10005.86,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-03-07,Electrical Work,-18474.96,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Inventory - Bread,-951.40,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Restaurant/Bar Sales,650.82,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-08,Evelin Tip,-601.29,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Pablo Tip,-472.44,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Melvin tip,-601.29,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Lesli Liquidacion,-1131.12,ach_liquidacion,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Edgar Tip,-497.63,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-08,Eslin Tip,-257.69,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-09,Restaurant/Bar Sales,432.29,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-10,Restaurant/Bar Sales,2553.73,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-11,Restaurant/Bar Sales,2897.41,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-03-12,Pricemart Food and Supplies,-3612.46,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-12,Inventory - Bar,-1247.90,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-12,Restaurant/Bar Sales,113.12,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-12,Transfer between accounts,-402.18,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-03-13,Restaurant/Bar Sales,694.94,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-13,Taxes,-1254.69,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-03-13,Furniture Repair,-1382.48,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-13,Outdoor Supplies,-2595.29,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-13,Furniture Repair,-2790.10,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-14,Ana Tip,-601.29,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-03-14,Cash Deposit,3138.27,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-03-15,Restaurant/Bar Sales,2992.00,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-15,Supplies,-854.62,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-17,Restaurant/Bar Sales,1104.98,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-18,Restaurant/Bar Sales,2052.07,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-18,Transportation,-207.37,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Melvin Payroll,-1997.63,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Pablo Payroll,-3357.55,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Ana Payroll,-2457.52,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Edgar Payroll,-2443.57,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Eslin Payroll,-2753.91,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Evelin Payroll,-2915.68,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-18,Sergio Payroll,-1523.12,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-03-19,Restaurant/Bar Sales,1806.01,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-19,Pricemart Food and Supplies,-3185.71,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-19,Inventory - Bread,-578.13,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-20,Restaurant/Bar Sales,193.93,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-20,Electric Bill,-5023.07,electric_bill,Pago de Empresa Electrica,Cob.Cta.Ajena
+2024-03-20,Transportation,-703.81,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-21,Supplies,-201.09,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-03-22,Restaurant/Bar Sales,626.22,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-23,Restaurant/Bar Sales,1615.01,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-24,Restaurant/Bar Sales,987.77,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-25,Inventory - Impossible Burger,-1327.18,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-25,Inventory - Bar,-1348.50,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-25,Restaurant/Bar Sales,499.30,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-25,Pricemart Food and Supplies,-3890.52,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-03-25,Restaurant/Bar Sales,111.69,vendor_exact,CREDITO ACH MELENDEZCABALLEROS,Compensacion Guate ACH
+2024-03-25,Restaurant/Bar Sales,95.73,vendor_exact,CREDITO ACH MELENDEZCABALLEROS,Compensacion Guate ACH
+2024-03-26,Restaurant/Bar Sales,617.78,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-27,Restaurant/Bar Sales,1804.54,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-28,Restaurant/Bar Sales,1651.44,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-28,Taxes,-201.09,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-03-29,Restaurant/Bar Sales,2082.85,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-30,Restaurant/Bar Sales,4139.01,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-03-31,Restaurant/Bar Sales,4268.94,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-04-01,COGS Bread,471.30,ach_inventory,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-01,Restaurant/Bar Sales,2407.00,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-01,Pricemart,4256.07,ach_inventory,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-01,Sergio salary,1666.45,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Ana Salary,2868.77,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Edgar Salary,2801.58,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Eslin Salary,3445.58,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Restaurant/Bar Sales,464.03,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-02,Pablo Salary,1256.80,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Melvin Salary,4604.64,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Evelin Salary,2778.76,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Pablo Salary,2100.75,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-02,Marisol Salary,2827.21,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-03,Restaurant/Bar Sales,614.10,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-03,Trash Service,816.92,ach_trash,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-05,Restaurant/Bar Sales,64.64,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-07,Restaurant/Bar Sales,978.55,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-08,Restaurant/Bar Sales,2195.72,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-08,Cash Deposit,1318.30,cash_deposit,DEPOSITO EN EFECTIVO,VISTA HERMOSA
+2024-04-08,Evelin tip,1235.60,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Melvin Tip,1235.60,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Pablo Tip,1235.60,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Marisol Tip,1235.60,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Ana tip,823.78,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Eslin Tip,823.78,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Edgar Tip,823.78,ach_tip,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-08,Restaurant/Bar Sales,347.46,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-04-09,Pricemart,2754.88,ach_inventory,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-10,Restaurant/Bar Sales,193.93,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-10,Entertainment,64.10,ach_vendor,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-13,Restaurant/Bar Sales,690.86,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-14,Restaurant/Bar Sales,817.63,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-15,Restaurant/Bar Sales,904.99,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-15,Cash Deposit,952.10,cash_deposit,DEPOSITO EN EFECTIVO,Agentes GyT
+2024-04-15,Cash Deposit,5514.87,cash_deposit,DEPOSITO EN EFECTIVO,Cayala II
+2024-04-16,Restaurant/Bar Sales,206.05,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-17,Ana Salary,2501.64,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Edgar Salary,2031.30,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Evelin Salary,2253.92,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Marisol Salary,2441.55,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Sergio salary,1630.96,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Melving Salary,2091.04,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-17,Pablo Salary,3357.55,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-18,Restaurant/Bar Sales,221.29,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-18,Transfer between accounts,276.11,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-04-18,Cash Deposit,1611.25,cash_deposit,DEPOSITO EN EFECTIVO,Cayala II
+2024-04-19,Eslin Salary,2515.07,ach_payroll,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-19,COGS Bread,744.03,ach_inventory,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-19,Restaurant/Bar Sales,157.57,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-20,Restaurant/Bar Sales,221.70,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-21,Restaurant/Bar Sales,2521.99,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-22,Restaurant/Bar Sales,2001.89,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-22,Pricemart,2502.64,ach_inventory,DEBITO ACH IFT,Compensacion Guate ACH
+2024-04-23,Restaurant/Bar Sales,173.73,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-27,Restaurant/Bar Sales,169.68,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-28,Restaurant/Bar Sales,319.17,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-29,Restaurant/Bar Sales,1276.67,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-04-29,Taxes,2731.03,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-04-30,Restaurant/Bar Sales,484.81,vendor_exact,Crédito Pago Diario,Bca. Empresa
+2024-05-02,Ana salary,-613.48,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-02,Edgar salary,-268.15,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-02,Evelin salary,-1107.89,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-02,Marisol Salary,-928.49,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-02,Melvin Salary,-4604.64,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-02,Restaurant/Bar Sales,52.52,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-02,Cash Deposit,1464.77,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-05-02,Eslin salary,-1224.53,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-03,Pablo salary,-1759.52,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-03,Cash Deposit,1464.77,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-05-03,Pablo salary,-1598.02,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-04,Restaurant/Bar Sales,371.69,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-05,Restaurant/Bar Sales,375.73,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-06,Restaurant/Bar Sales,298.97,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-06,Pricemart,-2208.80,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-05-09,Cash Deposit,1098.58,cash_deposit,DEPOSITO EN EFECTIVO,Agentes GyT
+2024-05-09,Cash Deposit,1464.77,cash_deposit,DEPOSITO EN EFECTIVO,Cayala II
+2024-05-09,Sergio liquidacion,-4254.78,ach_liquidacion,DEBITO ACH,Compensacion Guate ACH
+2024-05-10,Restaurant/Bar Sales,2757.23,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-11,Restaurant/Bar Sales,775.70,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-12,Restaurant/Bar Sales,808.70,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-13,Restaurant/Bar Sales,3353.66,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-13,Cash Deposit,1538.01,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-05-14,Restaurant/Bar Sales,196.25,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-15,Taxes,-986.58,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-05-15,Transfer between accounts,-1005.44,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-05-16,Ana salary,-765.60,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Eslin salary,-1298.05,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Evelin salary,-1069.86,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Marisol Salary,-841.67,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Melvin Salary,-2091.04,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Pablo salary,-3357.55,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Pablo tip,-484.82,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Melvin Tip,-484.82,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Evelin Tip,-484.82,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Marisol Tip,-484.82,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Ana Tip,-323.21,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-16,Eslin Tip,-323.21,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-05-17,Trash pickup,-339.34,ach_trash,DEBITO ACH,Compensacion Guate ACH
+2024-05-19,Restaurant/Bar Sales,258.58,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-20,Restaurant/Bar Sales,3741.14,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-20,Restaurant/Bar Sales,14647.72,vendor_exact,CREDITO ACH CONSTRUCCIONAUTOSU,Compensacion Guate ACH
+2024-05-20,Cash Deposit,5507.54,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-05-21,Transfer between accounts,-12568.00,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-05-22,Transfer between accounts,-1357.34,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-05-23,Electric Bill,-11357.21,electric_bill,Pago de Empresa Electrica,Cob.Cta.Ajena
+2024-05-23,Transfer between accounts,-904.90,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-05-24,Restaurant/Bar Sales,464.62,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-25,Restaurant/Bar Sales,164.75,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-27,Restaurant/Bar Sales,1553.19,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-05-27,Restaurant/Bar Sales,3494.73,vendor_exact,N.C. PAGO PROVENET,Bca. Empresa
+2024-05-28,Septic Service,-4398.80,ach_vendor,DEBITO ACH,Compensacion Guate ACH
+2024-05-28,Taxes,-618.35,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-05-28,COGS Bread,-378.30,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Ana salary,-841.67,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Eslin salary,-1424.82,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Evelin salary,-1171.29,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Marisol Salary,-963.48,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Melvin salary,-4604.64,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-05-31,Pablo salary,-3357.55,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-04,Transfer between accounts,-5027.20,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-06-06,Cash Deposit,5507.54,cash_deposit,DEPOSITO EN EFECTIVO,Cayala II
+2024-06-07,Pablo Tip,-518.24,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Melvin Tip,-518.24,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Evelin Tip,-518.24,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Marisol Tip,-518.24,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Ana Tip,-345.49,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Eslin Tip,-345.49,ach_tip,DEBITO ACH,Compensacion Guate ACH
+2024-06-07,Cash Deposit,5507.54,cash_deposit,DEPOSITO EN EFECTIVO,VISTA HERMOSA
+2024-06-10,Pricemart order,-5626.40,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-06-11,Reimbursement,-3142.00,reimbursement,DEBITO ACH,Compensacion Guate ACH
+2024-06-12,Cash Deposit,7104.15,cash_deposit,DEPOSITO EN EFECTIVO,Plaza Varietá
+2024-06-13,Transfer between accounts,-8294.88,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-06-14,Taxes,-1146.92,taxes,DECLARAGUATE TESORERIA NAC.,Cob.Cta.Ajena
+2024-06-14,Reimbursement,-1131.12,reimbursement,DEBITO ACH,Compensacion Guate ACH
+2024-06-15,Restaurant/Bar Sales,140.90,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-15,Restaurant/Bar Sales,1464.77,vendor_exact,CREDITO ACH LOPEZCLAVELDIEGOIS,Compensacion Guate ACH
+2024-06-16,Restaurant/Bar Sales,190.68,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-17,Ana Payroll,-689.54,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Eslin Payroll,-1315.81,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Evelin Payroll,-1289.18,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Marisol Payroll,-588.13,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Melvin Payroll,-2091.04,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Pablo Payroll,-3357.55,ach_payroll,DEBITO ACH,Compensacion Guate ACH
+2024-06-17,Restaurant/Bar Sales,56.55,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-17,Inventory - Bread,-454.96,ach_inventory,DEBITO ACH,Compensacion Guate ACH
+2024-06-21,Restaurant/Bar Sales,72.73,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-23,Restaurant/Bar Sales,529.26,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-24,Restaurant/Bar Sales,464.54,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-25,Restaurant/Bar Sales,60.60,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-26,Transfer between accounts,-1005.44,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-06-26,Transfer between accounts,-1279.42,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-06-28,Transfer between accounts,-1822.36,transfer_between_accounts,TRANSFERENCIA DE FONDOS BC,Bca. Empresa
+2024-06-28,Owner Cash Infusion,-1256.80,owner_cash_infustion,DEBITO ACH,Compensacion Guate ACH
+2024-06-29,Restaurant/Bar Sales,169.68,vendor_exact,NEONET AF:143030000,Bca. Empresa
+2024-06-30,Restaurant/Bar Sales,36.36,vendor_exact,NEONET AF:143030000,Bca. Empresa

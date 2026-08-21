@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 40px 20px; color: #333; line-height: 1.6; }
+  h1 { font-size: 28px; color: #1a1a1a; margin-bottom: 4px; }
+  h2 { font-size: 18px; color: #1a1a1a; margin-top: 28px; margin-bottom: 8px; }
+  h3 { font-size: 14px; color: #555; margin-top: 20px; margin-bottom: 6px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 32px; }
+  p { margin: 8px 0; }
+  .note { color: #666; font-size: 12px; font-style: italic; }
+  ol, ul { margin: 8px 0; padding-left: 24px; }
+  li { margin: 4px 0; }
+  .tab-list { background: #f9f9f9; padding: 16px 20px; border-radius: 8px; margin: 12px 0; }
+  .tab-name { font-weight: bold; color: #2563eb; }
+  code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+  .step-header { font-weight: bold; font-size: 15px; color: #1a1a1a; margin-top: 24px; }
+  .divider { border: none; border-top: 1px solid #eee; margin: 24px 0; }
+</style>
+</head>
+<body>
+<h1>Bank Reconciliation Parser</h1>
+<div class="subtitle">User Guide &nbsp;|&nbsp; Wander Boutique Hotel &nbsp;|&nbsp; Axiom Shift</div>
+
+<h2>How It Works</h2>
+<p>Each time you run the parser, it processes your bank statement in two stages:</p>
+<p><strong>Stage 1 — Load:</strong> Reads the ACH batch detailed CSV into an internal lookup table, keyed by transaction amount. This lets the parser match statement debits to their full descriptions.</p>
+<p><strong>Stage 2 — Classify:</strong> For each transaction in the bank statement:</p>
+<ul>
+  <li><strong>Credits</strong> — classified by amount threshold (tour sale vs. restaurant revenue)</li>
+  <li><strong>Card sales</strong> (VisaNet / Neonet / Acepta) — Restaurant/Bar Sales</li>
+  <li><strong>Cash deposits</strong> — Cash Deposit</li>
+  <li><strong>ACH debits</strong> — matched to the detailed ACH lookup by amount</li>
+  <li><strong>Anything unmatched</strong> — sent to the Unclassified Log for manual review</li>
+</ul>
+
+<hr class="divider">
+
+<h2>Step 1 — Export Your Bank Data</h2>
+<p><strong>Bank Statement</strong> — download from your online banking portal and export as CSV.</p>
+<p><strong>ACH Detailed Report</strong> — download the transaction-level ACH batch report from your bank and export as CSV. <em>Optional but recommended — this significantly improves debit classification.</em></p>
+<p style="background:#fff3cd; border:2px solid #ffc107; border-radius:8px; padding:12px 16px; font-weight:bold; font-size:15px; color:#856404; margin-top:12px;">⚠ &nbsp;Both files must cover the same date range. The parser matches statement debits to detailed records by amount — if the ranges don't align, the matches won't work.</p>
+
+<hr class="divider">
+
+<h2>Step 2 — Paste Data Into the Import Tabs</h2>
+
+<p class="step-header">Import - Statement tab:</p>
+<p>Paste the bank statement CSV starting at <strong>cell A1</strong> — paste the full raw export including headers. Row 1 = headers, row 2 = first data row.</p>
+
+<p class="step-header">Import - Detailed tab:</p>
+<p>Paste the ACH batch detailed CSV starting at <strong>cell A1</strong>. Leave this tab empty if you don't have a separate detailed ACH report.</p>
+
+<hr class="divider">
+
+<h2>Step 3 — Run the Parser</h2>
+<p>At the top of the Google Sheet, find the <strong>🔄 Parser</strong> menu and click <strong>▶️ Run on Import Tabs</strong>.</p>
+<p>A summary alert appears when complete, showing:</p>
+<ul>
+  <li>Total transactions processed</li>
+  <li>How many were auto-classified</li>
+  <li>How many went to the Unclassified Log</li>
+  <li>How many detailed ACH records were loaded</li>
+</ul>
+
+<hr class="divider">
+
+<h2>Step 4 — Review QB Upload</h2>
+<p>Open the <strong>QB Upload</strong> tab. The output columns are:</p>
+<div class="tab-list">
+  <div><span class="tab-name">Column A — Date</span> &nbsp; Transaction date (YYYY-MM-DD)</div>
+  <div><span class="tab-name">Column B — Description</span> &nbsp; QB category description — enter this in QuickBooks</div>
+  <div><span class="tab-name">Column C — Amount</span> &nbsp; Negative = debit, positive = credit</div>
+  <div><span class="tab-name">Column D — Rule ID</span> &nbsp; Which rule matched (for debugging)</div>
+  <div><span class="tab-name">Column E — Raw Description</span> &nbsp; Original transaction description</div>
+</div>
+<p>Columns A through C are your QuickBooks upload. To download them as a CSV file, go to <strong>🔄 Parser &gt; 📥 Download QB Upload as CSV</strong>. A file named <code>qb_upload.csv</code> saves to your Google Drive root folder. Open it in QuickBooks using your normal CSV import process.</p>
+
+<hr class="divider">
+
+<h2>Step 5 — Handle Unclassified Transactions</h2>
+<p>Open the <strong>Unclassified Log</strong> tab.</p>
+<p>For each row: review the raw description and amount, determine the correct QuickBooks category, and enter it directly in the QB Upload tab.</p>
+<p>If transactions keep appearing unclassified, note the raw description and amount and email David at davidhoff5008@gmail.com — the rules can be updated as necessary.</p>
+<p>Email davidhoff5008@gmail.com with the raw description, amount, date, and any error messages if you run into any issues.</p>
+
+<hr class="divider">
+
+<h2>Active Classification Rules</h2>
+<p><strong>Amount-Based Rules (Credits):</strong></p>
+<ul>
+  <li>DEPOSITO EN EFECTIVO under Q1,500 — Tour Sale</li>
+  <li>DEPOSITO EN EFECTIVO Q1,500 or more — Restaurant and Bar Sales</li>
+  <li>CREDITO ACH under Q1,500 — Tour Sale</li>
+  <li>CREDITO ACH Q1,500 or more — Bank Transfer</li>
+  <li>CREDITO RECEPTOR ACH under Q1,500 — Tour Sale</li>
+  <li>CREDITO RECEPTOR ACH Q1,500 or more — Bank Transfer</li>
+</ul>
+<p><strong>Description Pattern Rules:</strong></p>
+<ul>
+  <li>VisaNet / Neonet / Acepta card sales — Restaurant/Bar Sales</li>
+  <li>DEPOSITO EN EFECTIVO — Cash Deposit</li>
+  <li>TRANSFERENCIA DE FONDOS BC — Transfer Between Accounts</li>
+  <li>DEBITO ACH — matched via detailed ACH lookup when available</li>
+  <li>Pago de Empresa Electrica — Electric Bill</li>
+  <li>DECLARAGUATE TESORERIA NAC. — Taxes</li>
+  <li>ND x Rechazos — Fee for returned check</li>
+</ul>
+
+<hr class="divider">
+
+<h2>Clearing and Re-Running</h2>
+<p>To start fresh without re-uploading data, click <strong>🔄 Parser &gt; 🗑️ Clear QB Upload</strong>. This clears the QB Upload and Unclassified Log tabs only — your data in the Import tabs is preserved.</p>
+
+</body>
+</html>
