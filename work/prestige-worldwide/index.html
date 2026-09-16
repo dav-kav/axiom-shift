@@ -6,41 +6,123 @@
   <meta name="description" content="Prestige Worldwide — Compliance management solutions for businesses. Simplifying regulatory requirements so you can focus on what matters.">
   <title>Prestige Worldwide | Compliance Management</title>
   
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Prestige Worldwide | Compliance Management">
-  <meta property="og:description" content="Compliance management solutions for businesses. Simplifying regulatory requirements so you can focus on what matters.">
-  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Styles -->
-  <link rel="stylesheet" href="../../css/styles.css">
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="../../images/logo.png">
 
   <style>
-    :root {
-      --color-primary: #000000;
-      --color-primary-dark: #1a1a1a;
-      --color-accent: #333333;
-      --color-bg-dark: #ffffff;
-      --color-bg-card: #f5f5f5;
-      --color-text: #1a1a1a;
-      --color-text-muted: #666666;
-      --color-border: #e0e0e0;
-      --color-white: #ffffff;
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: var(--color-bg-dark);
-      color: var(--color-text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #ffffff;
     }
 
+    a {
+      color: #000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.2;
+      color: #000000;
+    }
+
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.5rem; }
+
+    p {
+      color: #555555;
+      margin-bottom: 1rem;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #000000;
+      color: #000000;
+    }
+
+    .btn-outline:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ===== HEADER ===== */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       background-color: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--color-border);
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
     }
 
     .logo img {
@@ -48,97 +130,113 @@
       width: auto;
     }
 
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
     .nav-links a {
-      color: var(--color-text-muted);
+      color: #666666;
+      font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover {
-      color: var(--color-primary);
+      color: #000000;
     }
 
-    .btn-primary {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--color-primary-dark);
-      color: var(--color-white);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: var(--color-primary);
-      color: var(--color-primary);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-    }
-
-    /* Hero — Black bg, white text */
+    /* ===== HERO ===== */
     .hero {
-      background: var(--color-primary);
-      color: var(--color-white);
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      background: #000000;
     }
 
-    .hero::before {
-      display: none;
+    .hero-content {
+      max-width: 700px;
     }
 
-    .hero h1, .hero p {
-      color: var(--color-white);
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      line-height: 1.1;
+      color: #ffffff;
     }
 
     .hero p {
-      opacity: 0.85;
+      font-size: 1.25rem;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.85);
     }
 
-    /* Sections */
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* ===== SECTION STYLING ===== */
     section {
-      padding: var(--section-padding);
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
     }
 
     .section-header h2 {
-      color: var(--color-primary);
+      margin-bottom: 16px;
+      color: #000000;
     }
 
     .section-header p {
-      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      color: #666666;
     }
 
-    /* Services — white bg */
+    /* ===== SERVICES ===== */
     .services {
-      background-color: var(--color-bg-dark);
+      background-color: #ffffff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
     }
 
     .service-card {
-      background: var(--color-bg-dark);
-      border: 1px solid var(--color-border);
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
     }
 
     .service-card:hover {
-      border-color: var(--color-primary);
+      border-color: #000000;
+      transform: translateY(-4px);
     }
 
     .service-card h3 {
-      color: var(--color-primary);
+      color: #000000;
+      margin-bottom: 16px;
+      font-size: 1.25rem;
     }
 
-    /* Process — light gray bg */
-    .process {
-      background-color: var(--color-bg-card);
+    .service-card p {
+      color: #666666;
+      font-size: 0.95rem;
+      margin: 0;
     }
 
-    .step-number {
-      background-color: var(--color-primary);
-    }
-
-    /* Databases Section */
+    /* ===== DATABASES ===== */
     .databases {
-      background-color: var(--color-bg-dark);
+      background-color: #f5f5f5;
     }
 
     .db-grid {
@@ -148,10 +246,10 @@
     }
 
     .db-card {
-      background: var(--color-bg-card);
+      background: #ffffff;
       padding: 32px;
       border-radius: 8px;
-      border: 1px solid var(--color-border);
+      border: 1px solid #e0e0e0;
       text-decoration: none;
       color: inherit;
       transition: all 0.3s ease;
@@ -159,32 +257,86 @@
     }
 
     .db-card:hover {
-      border-color: var(--color-primary);
+      border-color: #000000;
       transform: translateY(-2px);
     }
 
     .db-card h3 {
-      color: var(--color-primary);
+      color: #000000;
       font-size: 1.1rem;
       margin-bottom: 8px;
     }
 
     .db-card p {
       font-size: 0.9rem;
-      color: var(--color-text-muted);
+      color: #666666;
       margin: 0;
     }
 
     .db-card .db-link {
       font-size: 0.8rem;
-      color: var(--color-text-muted);
+      color: #888888;
       margin-top: 12px;
       display: block;
     }
 
-    /* About — light gray */
+    /* ===== PROCESS ===== */
+    .process {
+      background-color: #ffffff;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 48px;
+    }
+
+    .process-step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background-color: #000000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 auto 24px;
+    }
+
+    .process-step h3 {
+      margin-bottom: 12px;
+      color: #000000;
+    }
+
+    .process-step p {
+      font-size: 0.95rem;
+      color: #555555;
+    }
+
+    /* ===== ABOUT ===== */
     .about {
-      background-color: var(--color-bg-card);
+      background-color: #f5f5f5;
+    }
+
+    .about-text {
+      max-width: 800px;
+    }
+
+    .about-text h2 {
+      margin-bottom: 16px;
+      color: #000000;
+    }
+
+    .about-text > p {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 16px;
     }
 
     .about-features {
@@ -194,92 +346,194 @@
       margin-top: 32px;
     }
 
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
     .feature-icon {
-      background-color: var(--color-primary);
+      width: 40px;
+      height: 40px;
+      background-color: #000000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
     }
 
     .feature-item h4 {
-      color: var(--color-primary);
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #000000;
     }
 
-    /* Contact — black bg, white text */
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #666666;
+      margin: 0;
+    }
+
+    /* ===== CONTACT ===== */
     .contact {
-      background: var(--color-primary);
-      color: var(--color-white);
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
     }
 
     .contact-info h2 {
-      color: var(--color-white);
+      color: #ffffff;
+      margin-bottom: 24px;
     }
 
-    .contact-info p {
-      color: rgba(255,255,255,0.8);
+    .contact-info > p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-item svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+      flex-shrink: 0;
     }
 
     .contact-form {
-      background: var(--color-bg-dark);
-      border: none;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
     }
 
     .contact-form h3 {
-      color: var(--color-primary);
+      color: #000000;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
     }
 
     .form-group label {
-      color: var(--color-text);
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #1a1a1a;
     }
 
     .form-group input,
     .form-group textarea {
-      background-color: var(--color-bg-card);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
+      width: 100%;
+      padding: 14px;
+      background-color: #f5f5f5;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      border-color: var(--color-primary);
       outline: none;
+      border-color: #000000;
     }
 
-    .contact-item {
-      color: rgba(255,255,255,0.7);
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
-    .contact-item svg {
-      fill: var(--color-white);
-    }
-
-    /* Footer */
+    /* ===== FOOTER ===== */
     footer {
-      background-color: var(--color-bg-dark);
-      border-top: 1px solid var(--color-border);
+      background-color: #ffffff;
+      padding: 48px 0 24px;
+      border-top: 1px solid #e0e0e0;
     }
 
-    .footer-logo {
-      color: var(--color-primary);
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .footer-logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
     }
 
     .footer-links a {
-      color: var(--color-text-muted);
+      color: #666666;
+      font-size: 0.9rem;
     }
 
     .footer-links a:hover {
-      color: var(--color-primary);
+      color: #000000;
     }
 
     .footer-bottom {
-      border-top: 1px solid var(--color-border);
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #e0e0e0;
     }
 
     .footer-bottom p {
-      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      color: #888888;
+      margin: 0;
     }
 
-    /* Responsive */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .about-features {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.75rem; }
+      
+      .hero h1 { font-size: 2.5rem; }
+      .hero { padding: 100px 0 60px; }
+      
+      .nav-links { display: none; }
+      
+      .contact-wrapper,
+      .about-features,
+      .services-grid,
+      .process-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
       }
     }
   </style>
@@ -291,7 +545,7 @@
     <div class="container">
       <nav>
         <a href="#" class="logo">
-          <img src="../../images/logo.png" alt="Prestige Worldwide" id="logo">
+          <img src="../../images/logo.png" alt="Prestige Worldwide">
         </a>
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
@@ -313,7 +567,7 @@
         <p>Regulatory requirements are constantly changing. We help businesses stay compliant, reduce risk, and focus on growth — without the headache.</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
-          <a href="#services" class="btn btn-outline" style="border-color: white; color: white;">Learn More</a>
+          <a href="#services" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">Learn More</a>
         </div>
       </div>
     </div>
@@ -432,10 +686,10 @@
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <div class="about-text" style="max-width: 100%;">
+      <div class="about-text">
         <h2>Why Prestige Worldwide</h2>
         <p>Compliance isn't a box to check — it's a competitive advantage when done right.</p>
-        <p></p><p style="color:#666">Most businesses treat compliance as overhead. We help you treat it as infrastructure — something that enables growth instead of slowing it down.</p>
+        <p>Most businesses treat compliance as overhead. We help you treat it as infrastructure — something that enables growth instead of slowing it down.</p>
         <div class="about-features">
           <div class="feature-item">
             <div class="feature-icon">
@@ -494,13 +748,7 @@
         </div>
         
         <div class="contact-form">
-          <h3 style="color: var(--color-primary); margin-bottom: 24px;">Request a Consultation</h3>
-          <div data-fs-success style="display:none; background: #f0f0f0; border: 1px solid #333; color: #333; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
-            <strong>Request received!</strong> We'll be in touch within 24 hours to schedule your consultation.
-          </div>
-          <div data-fs-error style="display:none; background: #fff0f0; border: 1px solid #cc0000; color: #cc0000; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
-            <strong>Something went wrong.</strong> Please try again or email us directly.
-          </div>
+          <h3>Request a Consultation</h3>
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Your Name</label>
@@ -522,7 +770,7 @@
               <label for="message">How Can We Help?</label>
               <textarea id="message" name="message" required placeholder="Tell us about your compliance needs..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; background: #000; color: #fff;">Submit Request</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
           </form>
         </div>
       </div>
@@ -534,7 +782,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="../../images/logo.png" alt="Prestige Worldwide" style="height: 40px; width: auto;">
+          <img src="../../images/logo.png" alt="Prestige Worldwide">
         </div>
         <ul class="footer-links">
           <li><a href="#services">Services</a></li>
@@ -549,9 +797,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="../../js/main.js"></script>
 
 </body>
 </html>
