@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Axiom Shift client work — custom websites, process automation, and business consulting projects.">
+  <title>Our Work | Axiom Shift</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../" class="logo">
+          <img src="../images/logo.png" alt="Axiom Shift" id="logo">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="/">Work</a></li>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../#about">Why Axiom Shift</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+        <a href="../#contact" class="btn btn-primary">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="hero" style="min-height: 60vh; padding: 140px 0 80px;">
+    <div class="container">
+      <div class="hero-content">
+        <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Client Work</h6>
+        <h1>Work We're Proud Of</h1>
+        <p style="max-width: 600px;">Custom solutions built for real businesses. Every project starts with understanding your unique challenges and ends with results you can measure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="services" style="padding-top: 0;">
+    <div class="container">
+      <div class="work-grid">
+
+        <a href="marks-website/" class="work-card">
+          <div class="work-card-inner">
+            <div class="work-badge">Website Design</div>
+            <div class="work-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="14" rx="2"/>
+                <path d="M3 9h18"/>
+                <circle cx="7" cy="6" r="0.5" fill="currentColor"/>
+                <circle cx="9" cy="6" r="0.5" fill="currentColor"/>
+                <path d="M7 12h4M7 15h6"/>
+              </svg>
+            </div>
+            <div class="work-card-content">
+              <h3>Mark's Small Business Website</h3>
+              <p>Custom 8-page website for a small business — modern design, mobile responsive, built to client-approved mockups.</p>
+              <div class="work-tags">
+                <span>Web Design</span>
+                <span>SEO</span>
+                <span>Responsive</span>
+              </div>
+            </div>
+            <div class="work-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Coming Soon Placeholder -->
+      <div class="coming-soon">
+        <p>More case studies coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="contact" style="text-align: center;">
+    <div class="container">
+      <h2>Ready to build something great?</h2>
+      <p style="max-width: 500px; margin: 24px auto 40px;">Let's talk about your project and see how we can help.</p>
+      <a href="../#contact" class="btn btn-primary">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="../images/logo.png" alt="Axiom Shift" style="height: 40px; width: auto;">
+        </div>
+        <ul class="footer-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="/">Work</a></li>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../#about">About</a></li>
+          <li><a href="../#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Axiom Shift. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+
+  <style>
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .work-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .work-card-inner {
+      background: var(--color-bg-dark);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .work-card:hover .work-card-inner {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+    }
+
+    .work-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .work-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, var(--color-bg-card) 0%, #252525 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+    }
+
+    .work-placeholder svg {
+      width: 64px;
+      height: 64px;
+    }
+
+    .work-card-content {
+      padding: 24px;
+    }
+
+    .work-card-content h3 {
+      color: var(--color-white);
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .work-card-content p {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .work-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .work-tags span {
+      background: var(--color-bg-card);
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+
+    .work-arrow {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      width: 32px;
+      height: 32px;
+      color: var(--color-primary);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .work-card:hover .work-arrow {
+      opacity: 1;
+    }
+
+    .coming-soon {
+      text-align: center;
+      padding: 48px;
+      border: 2px dashed var(--color-border);
+      border-radius: 8px;
+      color: var(--color-text-muted);
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom 8-page small business website — modern design, mobile responsive, built to client-approved mockups.">
+  <title>Mark's Small Business Website | Axiom Shift</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="icon" type="image/png" href="../../images/logo.png">
+
+  <style>
+    /* Case Study Specific */
+    .cs-hero {
+      min-height: 50vh;
+      padding: 140px 0 60px;
+      background: linear-gradient(135deg, var(--color-bg-dark) 0%, #1a1a1a 100%);
+    }
+
+    .cs-badge {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .cs-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .cs-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cs-meta-label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cs-meta-value {
+      font-weight: 600;
+      color: var(--color-white);
+    }
+
+    .cs-section {
+      padding: 80px 0;
+    }
+
+    .cs-section-alt {
+      background: var(--color-bg-card);
+    }
+
+    .cs-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .cs-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .cs-card {
+      background: var(--color-bg-dark);
+      padding: 32px;
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+    }
+
+    .cs-card h3 {
+      color: var(--color-primary);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .cs-card p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .cs-scope-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .cs-scope-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--color-text-muted);
+    }
+
+    .cs-scope-list li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .cs-timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .cs-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--color-border);
+    }
+
+    .cs-timeline-item {
+      position: relative;
+      padding-bottom: 32px;
+    }
+
+    .cs-timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .cs-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      border: 2px solid var(--color-bg-dark);
+    }
+
+    .cs-timeline-item.completed::before {
+      background: #2ecc40;
+    }
+
+    .cs-timeline-item.current::before {
+      background: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(187, 14, 20, 0.3);
+    }
+
+    .cs-timeline-item h4 {
+      color: var(--color-white);
+      margin-bottom: 4px;
+    }
+
+    .cs-timeline-item p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .cs-timeline-item .status {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .cs-timeline-item .status.done { color: #2ecc40; }
+    .cs-timeline-item .status.active { color: var(--color-primary); }
+    .cs-timeline-item .status.pending { color: var(--color-text-muted); }
+
+    .cs-placeholder {
+      background: linear-gradient(135deg, var(--color-bg-card) 0%, #252525 100%);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--color-text-muted);
+    }
+
+    .cs-placeholder svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.5;
+    }
+
+    .cs-placeholder p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .cs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .cs-nav a {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .cs-nav a:hover {
+      color: var(--color-primary);
+    }
+
+    .cs-nav a svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .cs-grid-2 { grid-template-columns: 1fr; }
+      .cs-grid-3 { grid-template-columns: 1fr; }
+      .cs-scope-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../../" class="logo">
+          <img src="../../images/logo.png" alt="Axiom Shift" id="logo">
+        </a>
+        <ul class="nav-links">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../">Work</a></li>
+          <li><a href="../../#services">Services</a></li>
+          <li><a href="../../#about">Why Axiom Shift</a></li>
+          <li><a href="../../#contact">Contact</a></li>
+        </ul>
+        <a href="../../#contact" class="btn btn-primary">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Case Study Hero -->
+  <section class="cs-hero">
+    <div class="container">
+      <div class="cs-badge">In Progress</div>
+      <h1 style="font-size: 2.5rem; margin-bottom: 16px;">Mark's Small Business Website</h1>
+      <p style="max-width: 600px; font-size: 1.1rem;">Custom 8-page website for a small business — modern design, mobile responsive, built to client-approved mockups.</p>
+      
+      <div class="cs-meta">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Client</span>
+          <span class="cs-meta-value">Mark</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Industry</span>
+          <span class="cs-meta-value">Small Business</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Services</span>
+          <span class="cs-meta-value">Web Design, SEO</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-value">Discovery Complete</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="cs-section cs-section-alt">
+    <div class="container">
+      <div class="cs-grid-2">
+        <div>
+          <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">The Challenge</h6>
+          <h2 style="margin-bottom: 24px;">A small business that needed a professional online presence</h2>
+          <p>Mark came to Axiom Shift with a clear need: a professional, modern website that accurately represents his business and helps attract customers. Like many small businesses, he needed more than a template — he needed a custom design that reflected his brand, with room to grow.</p>
+          <p>The scope includes up to 8 pages, with 5-10 mock-up review rounds to ensure the final design is exactly what he envisioned before a single line of code is written.</p>
+        </div>
+        <div class="cs-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="14" rx="2"/>
+            <path d="M3 9h18"/>
+            <circle cx="7" cy="6" r="0.5" fill="currentColor"/>
+            <circle cx="9" cy="6" r="0.5" fill="currentColor"/>
+            <path d="M7 12h4M7 15h6"/>
+          </svg>
+          <p>Website in progress — preview coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope -->
+  <section class="cs-section">
+    <div class="container">
+      <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; text-align: center;">Project Scope</h6>
+      <h2 style="text-align: center; margin-bottom: 48px;">What's Being Built</h2>
+      
+      <ul class="cs-scope-list">
+        <li>Custom 8-page website design</li>
+        <li>5-10 mock-up review rounds</li>
+        <li>Desktop and mobile responsive</li>
+        <li>Technical SEO foundation</li>
+        <li>Meta tags and structured data</li>
+        <li>XML sitemap</li>
+        <li>Domain registration and DNS</li>
+        <li>SSL/HTTPS setup</li>
+        <li>12 months managed hosting</li>
+        <li>Launch and go-live support</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="cs-section cs-section-alt">
+    <div class="container">
+      <div class="cs-grid-2">
+        <div>
+          <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Our Process</h6>
+          <h2 style="margin-bottom: 24px;">From discovery to launch</h2>
+          <p>Every Axiom Shift project follows the same proven process: understand your business first, design around your goals, and build to match.</p>
+        </div>
+        <div class="cs-timeline">
+          <div class="cs-timeline-item completed">
+            <h4>Discovery Call</h4>
+            <p>Requirements finalized, scope confirmed</p>
+            <span class="status done">Complete</span>
+          </div>
+          <div class="cs-timeline-item current">
+            <h4>Design Concepts</h4>
+            <p>2-3 initial mock-ups for client review</p>
+            <span class="status active">In Progress</span>
+          </div>
+          <div class="cs-timeline-item">
+            <h4>Design Reviews</h4>
+            <p>Up to 10 review rounds until final approval</p>
+            <span class="status pending">Pending</span>
+          </div>
+          <div class="cs-timeline-item">
+            <h4>Development</h4>
+            <p>Site built to approved design</p>
+            <span class="status pending">Pending</span>
+          </div>
+          <div class="cs-timeline-item">
+            <h4>Launch</h4>
+            <p>Domain, DNS, SSL, hosting, go-live</p>
+            <span class="status pending">Pending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="cs-section">
+    <div class="container">
+      <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; text-align: center;">Technical Approach</h6>
+      <h2 style="text-align: center; margin-bottom: 48px;">Built for performance and growth</h2>
+      
+      <div class="cs-grid-3">
+        <div class="cs-card">
+          <h3>Static HTML/CSS/JS</h3>
+          <p>Lightweight, fast-loading pages with no unnecessary dependencies. Deploys to GitHub Pages at no hosting cost.</p>
+        </div>
+        <div class="cs-card">
+          <h3>Mobile First</h3>
+          <p>Responsive design that looks and works great on every device — from large desktop monitors to mobile phones.</p>
+        </div>
+        <div class="cs-card">
+          <h3>SEO Foundation</h3>
+          <p>Proper meta tags, Open Graph, XML sitemap, and structured data so search engines can find and index the site properly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps -->
+  <section class="cs-section cs-section-alt">
+    <div class="container" style="text-align: center;">
+      <h6 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Next Steps</h6>
+      <h2 style="margin-bottom: 24px;">Ready to start your project?</h2>
+      <p style="max-width: 500px; margin: 0 auto 40px;">If you're a small business owner looking for a custom website that actually represents your brand, let's talk.</p>
+      <a href="../../#contact" class="btn btn-primary">Start a Conversation</a>
+
+      <div class="cs-nav">
+        <a href="../">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to All Work
+        </a>
+        <a href="../../">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Axiom Shift Home
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="../../images/logo.png" alt="Axiom Shift" style="height: 40px; width: auto;">
+        </div>
+        <ul class="footer-links">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../">Work</a></li>
+          <li><a href="../../#services">Services</a></li>
+          <li><a href="../../#about">About</a></li>
+          <li><a href="../../#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Axiom Shift. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+
+</body>
+</html>
